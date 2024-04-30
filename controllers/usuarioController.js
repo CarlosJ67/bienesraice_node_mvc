@@ -11,7 +11,7 @@ const formularioLogin = (req, res) => {
      csrfToken: req.csrfToken()
    })
 }
-
+// Validamos los datos del usuario para poder iniciar sesion
 const autenticar = async (req, res) =>{
   // validacion 
   await check('email').isEmail().withMessage('El Email es obligatorio').run(req)
@@ -64,7 +64,7 @@ const autenticar = async (req, res) =>{
   //Almacenar en un cookie
   return res.cookie('_token', token, {
     httpOnly: true, //Evita los ataques crossfit, esto hace que un cookie no sea accesible desde la API de JavaScript
-     // secure: true es un protocolo de certificacion, bloquador de cookie 
+     // secure: true es un protocolo de certificacion, bloquador de cookie, esto los debes de activar si ya vas a ponerlo en produccion
   }).redirect('/mis-propiedades')
 }
 
@@ -173,7 +173,7 @@ const confirmar = async (req, res) => {
  
 
 }
-
+// Con esta variable podemos hacer la recuperacion de tu cuenta
  const formularioOlvidePassword = (req, res) => {
   res.render('auth/olvide-password', {
     pagina: 'Recupera tu acceso a Bienes Raices',
@@ -276,7 +276,7 @@ const nuevoPassword = async (req, res) =>{
  // Hashear el nuevo password
  const salt = await bcrypt.genSalt(10)// con estas dos lineas se hashea un password 
  usuario.password = await bcrypt.hash( password, salt);
- usuario.token = null; // Aqui eliminamos el token para que desaparezca de la base 
+ usuario.token = null; // Aqui eliminamos el token para que desaparezca de la base de datos
 
   await usuario.save();
 
