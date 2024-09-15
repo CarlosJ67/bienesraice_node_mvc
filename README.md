@@ -1,4 +1,5 @@
-🏠 Proyecto de Bienes Raíces
+#🏠 Proyecto de Bienes Raíces
+
 Este es un proyecto de página web de bienes raíces que permite a los usuarios explorar, vender y publicar propiedades de manera sencilla. Los administradores pueden gestionar todas las publicaciones, mientras que los usuarios registrados tienen la capacidad de contactar con los administradores o dejar comentarios sobre propiedades de su interés.
 
 🚀 Funcionalidades del Proyecto
