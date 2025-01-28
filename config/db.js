@@ -11,7 +11,7 @@ const db = new Sequelize(process.env.BD_NOMBRE, process.env.BD_USER, process.env
     },
     pool: {
         max:5, 
-        min: 0,// cuando no alla en la pagina, se cierra la pagina
+        min: 0,// cuando no este nadie en la pagina, se cierra la pagina
         acquire:30000, 
         idle: 10000 //si ve que no hay visitas, se finaliza la conexion en la pagina 
     },
