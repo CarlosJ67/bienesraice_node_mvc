@@ -15,7 +15,7 @@ const formularioLogin = (req, res) => {
 const autenticar = async (req, res) =>{
   // validacion 
   await check('email').isEmail().withMessage('El Email es obligatorio').run(req)
-  await check('password').notEmpty().withMessage('El Password es obligatorio').run(req)
+  await check('password').notEmpty().withMessage('La Contraseña es obligatoria').run(req)
 
   let resultado = validationResult(req)
 
